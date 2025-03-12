@@ -1,0 +1,197 @@
+        :root {
+            --primary: #4A90E2;
+            --secondary: #50E3C2;
+            --background: #f5f7fa;
+            --text: #2c3e50;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--background) 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            color: var(--text);
+        }
+
+        .container {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-flow: column wrap;
+        }
+        h1 {
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .converter-section {
+            margin-bottom: 2rem;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        textarea {
+            width: 95%;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+            background: #f8f9fa;
+            padding: 1.2rem;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            flex: 1;
+            font-size: 1rem;
+        }
+
+        button.secondary {
+            background: var(--secondary);
+            flex: 1; /* Ensure buttons grow equally */
+            min-width: 150px; /* Set a minimum width for consistency */
+        }
+
+        button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .file-input {
+            margin: 1.5rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        #toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(40, 40, 40, 0.9);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            display: none;
+            font-size: 0.9rem;
+        }
+
+        #toast.show {
+            display: block;
+            animation: fadeInOut 2.5s;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            10%, 90% { opacity: 1; }
+        }
+
+        .error {
+            color: #e74c3c;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+            textarea{
+              width:70vw;
+            }
+            .button-group {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+
+            .file-input {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            textarea {
+                font-size: 0.9rem;
+                padding: 1rem;
+            }
+
+            label {
+                font-size: 1rem;
+            }
+
+            button.secondary {
+                min-width: 100%; /* Full width on smaller screens */
+            }
+        }
+ 
+ 
+        
+        /* Adding animation for the page load */
+/* Body element with animation */
+ body {
+  animation: fadeUp 1.5s ease-out;
+}
+
+/* Keyframes for fade-in and slide-up effect */
+
+@keyframes fadeUp {
+    from {
+         transform: translateY(20px);
+         opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Apply animation to container */
+.container {
+   opacity: 0;
+   transform: translateY(20px);
+   animation: fadeUp 1.5s ease-out forwards;
+} 
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Binary Converter || text to binary || binary to text</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Binary Converter | Text/Binary Translator with OCR | Free Online Tool</title>
+    <meta name="description" content="Free online binary converter with OCR capabilities. Convert text to binary (UTF-8, ASCII) and binary to text instantly. Extract text from images and files. Supports 8-bit binary groups with automatic validation.">
+    <meta name="keywords" content="binary converter, text to binary, binary to text, ASCII converter, UTF-8 converter, OCR converter, image to text, free online tools">
+    <meta name="author" content="Your Name/Company">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Advanced Binary Converter with OCR Support">
+    <meta property="og:description" content="Convert between text and binary instantly. Extract text from images and documents. Free online tool with OCR capabilities.">
+    <meta property="og:image" content="https://yourdomain.com/images/og-image.jpg">
+    <meta property="og:url" content="https://yourdomain.com/">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Advanced Binary Converter with OCR Support">
+    <meta name="twitter:description" content="Free online tool for text/binary conversion and image OCR. Supports multiple formats and 8-bit binary groups.">
+    <meta name="twitter:image" content="https://yourdomain.com/images/twitter-card.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourdomain.com/">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Advanced Binary Converter",
+        "description": "Online tool for converting between text and binary with OCR capabilities",
+        "applicationCategory": "Converter",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "150"
+        }
+    }
+    </script>
+
+    <!-- Add Tesseract.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>🔁 Advanced Binary Converter</h1>
+        
+        <div class="converter-section">
+            <label for="binaryInput">Input:</label>
+            <textarea id="binaryInput" rows="5" placeholder="Enter text or binary (8-bit groups separated by spaces)"></textarea>
+            
+            <div class="button-group">
+                <button onclick="convertBinary()">Text → Binary</button>
+                <button class="secondary" onclick="convertToBinary()">Binary → Text</button>
+            </div>
+
+            <div class="file-input">
+                <input type="file" id="fileUpload" hidden accept=".txt">
+                <button onclick="document.getElementById('fileUpload').click()" class="secondary">📁 Upload File</button>
+                <input type="file" id="imageUpload" hidden accept="image/*">
+                <button onclick="document.getElementById('imageUpload').click()" class="secondary">📷 Upload Image</button>
+                <button onclick="downloadResult()" class="secondary">💾 Download Result</button>
+                <button onclick="copyToClipboard()" class="secondary">📋 Copy Result</button>
+                <button onclick="clearFields()" class="secondary">❌ Clear</button>
+            </div>
+
+            <label for="result">Result:</label>
+            <textarea id="result" rows="5" readonly></textarea>
+            <div id="error" class="error"></div>
+        </div>
+    </div>
+
+    <div id="toast"></div>
+  <script src="script.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
