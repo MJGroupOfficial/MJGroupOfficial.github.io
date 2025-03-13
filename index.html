@@ -80,9 +80,22 @@
             <textarea id="result" rows="5" readonly></textarea>
             <div id="error" class="error"></div>
         </div>
+        <footer style="background-color: #f0f0f0a6; padding: 20px; text-align: center; font-size: 14px; color: #666; border-bottom-left-radius:5px; border-bottom-right-radius:5px;">
+  <div class="footer-content">
+    <p>© <span id="year">2025</span> MJGroupOfficial | All rights reserved.</p>
+    <div style="margin-top: 18px;">
+      <a href="https://x.com/MJGroupOfficial" style="color: #666; text-decoration: none; margin: 0 5px;">Twitter</a>
+      <a href="https://www.linkedin.com/in/mjgroup-officeal-941a86355" style="color: #666; text-decoration: none; margin: 0 5px;">LinkedIn</a>
+      <a href="https://github.com/MJGroupOfficial" style="color: #666; text-decoration: none; margin: 0 5px;">GitHub</a>
     </div>
-<footer style="text-align:center;font-size:2vw;" > It's my own website don't try to copy without you get copyright © from our site</footer>
-    <div id="toast"></div>
+  </div>
+        </footer>        
+    </div>
+  <div id="toast"></div>
+    <script>
+
+  document.getElementById("year").innerText = new Date().getFullYear();
+    </script>
   <script src="script.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
