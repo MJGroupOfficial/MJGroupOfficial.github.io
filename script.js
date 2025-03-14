@@ -126,4 +126,62 @@
             };
             reader.readAsDataURL(image);
         });
+// Fetch the JSON file
+fetch('data.json')
+  .then(response => response.json()) // Parse JSON data
+  .then(data => {
+    // Use the JSON data here
+    displayAppInfo(data);
+  })
+  .catch(error => {
+    console.error('Error loading JSON:', error);
+  });
+
+// Function to display JSON data in HTML
+function displayAppInfo(data) {
+  const appInfoDiv = document.getElementById('app-info');
+  
+  appInfoDiv.innerHTML = `
+    <h1>${data.appName}</h1>
+    <p>Version: ${data.version}</p>
+    <p>Description: ${data.description}</p>
+  `;
+}
+
+// config.json
+{
+  "features": [
+    { "name": "Text to Binary", "enabled": true },
+    { "name": "Binary to Text", "enabled": true }
+  ]
+}
+
+// script.js
+fetch('config.json')
+  .then(response => response.json())
+  .then(config => {
+    config.features.forEach(feature => {
+      if (feature.enabled) {
+        // Dynamically create UI elements for enabled features
+        console.log(`Enabled feature: ${feature.name}`);
+      }
+    });
+  });
+async function loadJSON() {
+     try {
+       const response = await fetch('data.json');
+       const data = await response.json();
+       displayAppInfo(data);
+     } catch (error) {
+       console.error('Error:', error);
+     }
+   }
+   loadJSON();
+
         
+// Save to localStorage
+const userSettings = { theme: "dark", language: "en" };
+localStorage.setItem('userSettings', JSON.stringify(userSettings));
+
+// Load from localStorage
+const savedSettings = JSON.parse(localStorage.getItem('userSettings'));
